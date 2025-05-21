@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: u9rdp66on-go-gitops
+  description: This is GitOps manifest for u9rdp66on-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=u9rdp66on-go
+    backstage.io/kubernetes-id: u9rdp66on-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: u9rdp66on-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:u9rdp66on-go
